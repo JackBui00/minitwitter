@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class groupTree implements tree{
-	
+	//database for tree 
 	private List<tree> groupDataBase = new ArrayList<>(); 
 	private String groupID; 
 	
@@ -14,11 +14,11 @@ public class groupTree implements tree{
 	public List<tree> getGroupDataBase(){
 		return groupDataBase; 
 	}
-	
+	//get ID 
 	public groupTree(String ID){
 		this.groupID = ID; 
 	}
-	
+	//check if the user exist to follow later
 	public Boolean hasUser(String userID) {
 		for (tree member : groupDataBase) {
 			if (member instanceof userLeaf) {
@@ -34,7 +34,7 @@ public class groupTree implements tree{
 		}
 		return false; 
 	}
-	
+	//find the user 
 	public userLeaf findUser(String userID) {
 		for (tree member : groupDataBase) {
 			if(member instanceof userLeaf) {
@@ -55,7 +55,7 @@ public class groupTree implements tree{
 	public String getID() {
 		return groupID; 
 	}
-
+	//add a visitor pattern 
 	@Override
 	public void add(visitor visitor) {
 		visitor.visitGroup(this);
