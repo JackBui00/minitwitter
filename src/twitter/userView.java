@@ -14,7 +14,7 @@ public class userView implements ActionListener{
 	private JFrame frame;
 
 	
-
+	//user interface 
 	public userView() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 456, 457);
@@ -46,7 +46,7 @@ public class userView implements ActionListener{
 		JTextArea inputPostTweet = new JTextArea();
 		inputPostTweet.setBounds(10, 218, 222, 68);
 		frame.getContentPane().add(inputPostTweet);
-		
+		//button to post tweets
 		JButton postTweet = new JButton("Post Tweet");
 		postTweet.setFont(new Font("Agency FB", Font.BOLD, 30));
 		postTweet.addActionListener(new ActionListener() {
@@ -56,7 +56,7 @@ public class userView implements ActionListener{
 		});
 		postTweet.setBounds(242, 218, 190, 68);
 		frame.getContentPane().add(postTweet);
-		
+		//button to follow user
 		JButton followUser = new JButton("Follow User");
 		followUser.setFont(new Font("Agency FB", Font.BOLD, 30));
 		followUser.addActionListener(new ActionListener() {
