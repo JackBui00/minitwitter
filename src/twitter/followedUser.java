@@ -2,7 +2,7 @@ package twitter;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//create observer List 
 public class followedUser{
 	private List<observer> followers = new ArrayList<>(); 
 	
