@@ -9,7 +9,7 @@ import java.util.Arrays;
 //import javafx.collections.ObservableList;
 
 public class userLeaf extends followedUser implements tree, observer{
-	
+	//the database that makes up each user
 	private String userID;
 	private List<userLeaf> following = new ArrayList<>();
 	private List<String> tweets = new ArrayList<>();
@@ -31,22 +31,22 @@ public class userLeaf extends followedUser implements tree, observer{
 		
 	}
 
-
+	//update the feed ot the followers
 	@Override
 	public void updateFeed(followedUser subject, String message) {
 		if (subject instanceof userLeaf) {
 			this.newsFeed.add(((userLeaf) subject).getID() + " - " + message);
 		}
 	}
-	
+	//add new follower
 	public void newFollowed(userLeaf user) {
 		following.add(user); 
 	}
-	
+	//grab tweets
 	public List<String> getTweets(){
 		return tweets; 
 	}
-	
+	//tweet message 
 	public void tweet(String message) {
 		tweets.add(message);
 		newsFeed.add(this.userID + " - " + message );
