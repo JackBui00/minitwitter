@@ -1,6 +1,6 @@
 package twitter; 
 
-
+//user interface
 public interface visitor{
 	public void visitGroup(groupTree group);
 	
