@@ -37,11 +37,13 @@ public class groupTree implements tree{
 	//find the user 
 	public userLeaf findUser(String userID) {
 		for (tree member : groupDataBase) {
+			//type comparison 
 			if(member instanceof userLeaf) {
 				if(member.getID() == userID) {
 					return (userLeaf) member; 
 				}
 			}
+			////type comparison 
 			else if (member instanceof groupTree) {
 				if (((groupTree) member).hasUser(userID)) {
 					return (((groupTree) member).findUser(userID); 
@@ -60,6 +62,7 @@ public class groupTree implements tree{
 	public void add(visitor visitor) {
 		visitor.visitGroup(this);
 		for (tree member : groupDataBase) {
+			////type comparison 
 			if(member instanceof userLeaf) {
 				member.add(visitor);
 			}
